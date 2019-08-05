@@ -22,9 +22,15 @@ class TestTeams < MiniTest::Test
 
   def test_set_coach_name
     team_details = Teams.new('England', ['player 1', 'player 2', 'player 3'], "mr coach")
-    team_details.new_coach("ferguson")
+    team_details.new_coach = "ferguson"
     assert_equal('ferguson', team_details.team_coach)
 
   end
+
+  def test_add_player
+    team_details = Teams.new('England', ['player 1', 'player 2', 'player 3'], "mr coach")
+    team_details.team_players.push()
+  end
+
 
 end
