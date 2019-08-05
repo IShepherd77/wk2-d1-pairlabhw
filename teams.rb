@@ -13,7 +13,17 @@ class Teams
     @players << new_player
   end
 
+  def is_player_in_team(player)
+    for each_player in @players
+      return true if each_player == player
+    end
+    return false
+  end
 
+  def update_points(won_or_lost)
+    @points += 3 if won_or_lost == true
+    p @points
+  end
 
   # def team_name()
   #   return @team_name
@@ -30,9 +40,5 @@ class Teams
   # def set_coach_name(new_coach_name)
   #   @coach = new_coach_name
   # end
-
-
-
-
 
 end

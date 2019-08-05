@@ -5,16 +5,30 @@ require_relative('../teams')
 class TestTeams < MiniTest::Test
 
   def test_add_new_player()
-     team_details = Teams.new('England', ['player 1', 'player 2', 'player 3'], "mr coach")
-     new_team = ['player 1', 'player 2', 'player 3', 'player 4']
-     assert_equal(new_team, team_details.add_new_player("player 4"))
-   end
+    team_details = Teams.new('England', ['player 1', 'player 2', 'player 3'], "mr coach")
+    new_team = ['player 1', 'player 2', 'player 3', 'player 4']
+    assert_equal(new_team, team_details.add_new_player("player 4"))
+  end
 
-#    def test_add_new_player()
-#   team = Teams.new("Dolphins", ["Player1", "Player2", "Player3"], "Coachy McCoachFace")
-#   new_team = ["Player1", "Player2", "Player3", "Player4"]
-#   assert_equal(new_team, team.add_new_player("Player4"))
-# end
+  def test_team_player_is_in_team__true()
+    team_details = Teams.new('England', ['player 1', 'player 2', 'player 3'], "mr coach")
+    assert_equal(true, team_details.is_player_in_team('player 3'))
+  end
+
+  def test_team_player_is_in_team__false()
+    team_details = Teams.new('England', ['player 1', 'player 2', 'player 3'], "mr coach")
+    assert_equal(false, team_details.is_player_in_team('Bob'))
+  end
+
+  def test_update_points__win()
+    team_details = Teams.new('England', ['player 1', 'player 2', 'player 3'], "mr coach")
+    assert_equal(3, team_details.update_points(true))
+  end
+
+  def test_update_points__lose()
+    team_details = Teams.new('England', ['player 1', 'player 2', 'player 3'], "mr coach")
+    assert_equal(0, team_details.update_points(false))
+end
 
 
   # def test_team_name
@@ -37,10 +51,4 @@ class TestTeams < MiniTest::Test
   #   team_details.set_coach_name('ferguson')
   #   assert_equal('ferguson', team_details.set_coach_name())
   # end
-
-
-
-
-
-
 end
