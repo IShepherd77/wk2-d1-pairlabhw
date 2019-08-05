@@ -37,8 +37,8 @@ class Teams
   #   return @coach
   # end
 
-  # def set_coach_name(new_coach_name)
-  #   @coach = new_coach_name
-  # end
+  def new_coach(coach_name)
+    @coach = 'ferguson'
+  end
 
 end
