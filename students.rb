@@ -14,14 +14,13 @@ class Student
     return @cohort
   end
 
-  def talk()
+  def student_can_talk()
     return "I can talk"
   end
 
   def say_favourite_language(language)
     return "I love " + language
   end
-
 
 
   def set_student_name(set_new_name)

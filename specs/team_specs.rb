@@ -46,22 +46,11 @@ end
   #   assert_equal('mr coach', team_details.team_coach)
   # end
 
-  # def test_set_coach_name()
-  #   team_details = Teams.new('England', ['player 1', 'player 2', 'player 3'], "mr coach")
-  #   team_details.new_coach_name('ferguson')
-  #   assert_equal('ferguson', team_details.new_coach_name())
-  # end
 
   def test_set_new_coach
   team_details = Teams.new('England', ['player 1', 'player 2', 'player 3'], "mr coach")
-  team_details.new_coach('ferguson')
+  team_details.set_new_coach('ferguson')
   assert_equal('ferguson', team_details.coach())
 end
-#
-# def new_coach(coach_name)
-#   @coach = 'Rui Vitoria'
-# end
-
-
 
 end

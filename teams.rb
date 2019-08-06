@@ -1,6 +1,6 @@
 class Teams
 
-  attr_accessor :team_name, :players, :coach
+  attr_accessor :team_name, :players, :coach, :points
 
   def initialize(input_team_name, input_array_of_players, input_coach)
     @team_name = input_team_name
@@ -21,7 +21,7 @@ class Teams
   end
 
   def update_points(won_or_lost)
-    @points += 3 if won_or_lost == true
+    @points += 3 if won_or_lost == true #won equals true, lost equals false
     p @points
   end
 
@@ -37,7 +37,8 @@ class Teams
   #   return @coach
   # end
 
-  def new_coach(coach_name)
+
+  def set_new_coach(coach_name)
     @coach = 'ferguson'
   end
 
